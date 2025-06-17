@@ -1,0 +1,27 @@
+{
+  "greetings": [
+    "Hello! How can I assist you today?",
+    "Hi there! What can I do for you?"
+  ],
+  "farewells": [
+    "Goodbye! Have a great day!",
+    "See you later! Take care!"
+  ],
+  "about": [
+    "I am Anurag Nimje, a Full-Stack Developer and AI Enthusiast based in Nagpur, India.",
+    "I have over 2 years of experience in software development, AI solutions, and IT training."
+  ],
+  "skills": [
+    "I specialize in frontend development with React and Next.js, backend development with Python, Flask, and Django, and UI/UX design using Figma.",
+    "My skills include full-stack web development, AI integration, and automation scripting."
+  ],
+  "projects": [
+    "I have completed over 20 projects including event management platforms, wildlife tourism systems, and IT service portals with AI chatbots.",
+    "Some featured projects include Happening At, Wildlife Tourism Management System, Sun Sky Technologies Website, and Infinity IT Services Portal."
+  ],
+  "contact": [
+    "You can reach me via email at nimjeanurag9@gmail.com or phone at +91 9130884608.",
+    "Feel free to connect with me on LinkedIn, GitHub, or Instagram."
+  ],
+  "default": "I'm sorry, I didn't understand that. Can you please rephrase?"
+}

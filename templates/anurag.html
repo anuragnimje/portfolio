@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag Nimje - AI-Powered Full Stack Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/jay.css">
+    <link rel="stylesheet" href="/static/css/icons.css">
+</head>
+<body class="bg-[#f0f2f5] text-gray-800 min-h-screen dark:bg-gray-900 dark:text-white">
+
+    <!-- Header - New Design -->
+    <header id="header" class="header bg-white dark:bg-gray-800">
+        <!-- Brand/Logo (hidden in header, displayed on card) -->
+        <div class="header__logo">
+            <span class="text-gray-800 text-2xl font-bold tracking-wider dark:text-white">ANURAG NIMJE</span>
+        </div>
+
+        <!-- Mobile Toggle (hamburger icon) -->
+        <div class="md:hidden order-1">
+            <button id="navbar-toggle" class="text-gray-700 focus:outline-none dark:text-gray-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation Menu Start -->
+        <div class="header__navigation hidden md:flex" id="navbar-links">
+            <nav id="menu" class="menu">
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link btn active" href="#hero">
+                            <span class="menu__caption">Home</span>
+                            <!-- <i class="ph-bold ph-house-simple"></i> -->
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link btn" href="#about">
+                            <span class="menu__caption">About Me</span>
+                            <!-- <i class="ph-bold ph-user"></i> -->
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link btn" href="#projects">
+                            <span class="menu__caption">Projects</span>
+                            <!-- <i class="ph-bold ph-squares-four"></i> -->
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link btn" href="#certificates">
+                            <span class="menu__caption">Resume</span>
+                            <!-- <i class="ph-bold ph-article"></i> -->
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link btn" href="#skills">
+                            <span class="menu__caption">Skills</span>
+                            <!-- <i class="ph-bold ph-gear-six"></i> -->
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link btn" href="#faq">
+                            <span class="menu__caption">FAQ</span>
+                            <!-- <i class="ph-bold ph-question"></i> -->
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link btn" href="#contact">
+                            <span class="menu__caption">Contact</span>
+                            <!-- <i class="ph-bold ph-envelope"></i> -->
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Navigation Menu End -->
+
+        <!-- Header Controls Start -->
+        <div class="header__controls order-2">
+            <button id="color-switcher" class="color-switcher header__switcher btn" type="button" role="switch" aria-label="light/dark mode" aria-checked="true">
+                <i class="ph-bold ph-sun"></i> <!-- Sun icon (light mode) -->
+                <i class="ph-bold ph-moon"></i> <!-- Moon icon (dark mode) -->
+                <em></em> <!-- The moving thumb of the switch -->
+            </button>
+            <a id="notify-trigger" class="header__trigger btn" href="mailto:nimjeanurag9@gmail.com?subject=Message%20from%20your%20site">
+                <span class="trigger__caption">Let's Talk</span>
+                <i class="ph-bold ph-chat-dots"></i>
+            </a>
+        </div>
+        <!-- Header Controls End -->
+    </header>
+
+    <!-- Hero Section - Updated Structure based on Image -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-gray-800 overflow-hidden dark:text-white dark:bg-gray-900">
+        <div class="relative z-10 w-full h-full" id="hero-content-wrapper">
+            <!-- Left Card -->
+            <div class="animate-scale-in flex flex-col items-center text-center rounded-3xl border p-8 shadow-xl bg-white dark:bg-gray-800 dark:border-gray-700" data-animate="hero-card-left" id="hero-card-container">
+                <!-- Avatar Image -->
+                <img src="/static/images/download.webp" alt="Anurag Avatar" height="100" width="100" class="rounded-xl mb-6 shadow-lg">
+                
+                <!-- Social Icons -->
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://www.instagram.com/anurag_nimje_/" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                        <i class="ph-bold ph-instagram-logo w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anuragnimje5925a228" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                        <i class="ph-bold ph-linkedin-logo w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                    </a>
+                    <a href="https://github.com/anurag-nimje" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                        <i class="ph-bold ph-github-logo w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                    </a>
+                    <a href="mailto:nimjeanurag9@gmail.com" class="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                        <i class="ph-bold ph-envelope-simple w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                    </a>
+                </div>
+                <button onclick="scrollToSection('contact')" class="w-full px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full shadow-lg hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                    Let's Work Together!
+                </button>
+            </div>
+
+            <!-- Right Content -->
+            <div class="text-center md:text-left animate-fade-in-up" data-animate="hero-content-right" id="hero-main-content">
+                <p class="text-xl sm:text-2xl font-light text-gray-300 mb-2 flex items-center">
+                    <i class="ph-bold ph-sparkle w-6 h-6 mr-3 text-cyan-400"></i> Let's build something amazing!
+                </p>
+                <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight drop-shadow-lg text-white">
+                    I'm Anurag Nimje
+                </h1>
+                <p class="text-2xl sm:text-4xl text-purple-400 font-light mb-8">
+                    Full-Stack Developer & AI Enthusiast
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4" data-animate="hero-buttons-right">
+                    <button onclick="scrollToSection('projects')" class="px-8 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-500">
+                        View Projects <i class="ph-bold ph-squares-four inline-block ml-2 w-5 h-5"></i>
+                    </button>
+                    <a href="/Anurag 2025 CV.pdf" download="Anurag_2025_CV.pdf" class="inline-flex items-center px-8 py-3 border-2 border-purple-600 text-purple-600 font-semibold rounded-full shadow-lg hover:bg-purple-600 hover:text-white transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 dark:border-cyan-600 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white dark:focus:ring-cyan-500">
+                        Download Resume <i class="ph-bold ph-download-simple inline-block ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll for more indicator -->
+        <div class="absolute bottom-10 right-10 text-gray-400 animate-pulse-light hidden sm:block">
+            <svg viewBox="0 0 100 100" width="100" height="100">
+                <defs>
+                    <path id="circlePath"
+                          d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                    />
+                </defs>
+                <g>
+                    <text>
+                        <textPath href="#circlePath" fill="#9ca3af" class="dark:fill-gray-400" style="font-size: 10px; letter-spacing: 2px;">
+                            SCROLL FOR MORE • SCROLL FOR MORE •
+                        </textPath>
+                    </text>
+                </g>
+            </svg>
+            <i class="ph-bold ph-arrow-down absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-gray-500 dark:text-gray-400"></i>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-900 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                About Me
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Personal Info & Summary -->
+                <div class="lg:pr-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 transform hover:scale-105 transition-transform duration-300 animate-from-left dark:bg-gray-800 dark:border-gray-700">
+                        <h3 class="text-3xl font-semibold mb-6 text-gray-800 dark:text-white">Who I Am</h3>
+                        <p class="text-lg leading-relaxed text-gray-600 mb-8 dark:text-gray-300" id="about-summary">
+                            <!-- Content populated by JS -->
+                        </p>
+                        <div class="space-y-4 text-lg">
+                            <p class="flex items-center text-gray-700 dark:text-gray-200"><i class="ph-bold ph-user-circle-gear mr-3 text-purple-600 dark:text-cyan-400"></i> <span class="font-semibold">Name:</span> <span id="about-name"></span></p>
+                            <p class="flex items-center text-gray-700 dark:text-gray-200"><i class="ph-bold ph-phone mr-3 text-purple-600 dark:text-cyan-400"></i> <span class="font-semibold">Phone:</span> <span id="about-phone"></span></p>
+                            <p class="flex items-center text-gray-700 dark:text-gray-200"><i class="ph-bold ph-envelope-simple mr-3 text-purple-600 dark:text-cyan-400"></i> <span class="font-semibold">Email:</span> <span id="about-email"></span></p>
+                            <p class="flex items-center text-gray-700 dark:text-gray-200"><i class="ph-bold ph-map-pin mr-3 text-purple-600 dark:text-cyan-400"></i> <span class="font-semibold">Location:</span> <span id="about-location"></span></p>
+                            <div class="flex space-x-6 mt-6">
+                                <a href="https://www.linkedin.com/in/anuragnimje5925a228" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-blue-500">
+                                    <i class="ph-bold ph-linkedin-logo w-8 h-8"></i>
+                                </a>
+                                <a href="https://github.com/anurag-nimje" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-gray-200">
+                                    <i class="ph-bold ph-github-logo w-8 h-8"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Key Stats -->
+                <div class="lg:pl-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8" id="about-stats-container">
+                        <!-- Stats populated by JS -->
+                    </div>
+                    <div class="mt-12 text-center animate-on-scroll" style="transition-delay: 0.8s;">
+                        <a href="/Anurag 2025 CV.pdf" download="Anurag_2025_CV.pdf" class="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 text-lg dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-500">
+                            Download My Resume <i class="ph-bold ph-download-simple ml-3 w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-950 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                My Projects
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="projects-container">
+                <!-- Projects populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-900 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                Work Experience
+            </h2>
+
+            <div class="relative before:absolute before:left-1/2 before:-translate-x-1/2 before:w-1 before:h-full before:bg-gray-300 before:rounded-full before:z-0 dark:before:bg-gray-700" id="experience-container">
+                <!-- Experiences populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- My Favourite Tools & Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-950 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                My Favourite Tools & Skills
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" id="skills-container">
+                <!-- Skills populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Chatbot Section -->
+    <section id="chatbot" 
+    class="py-20 px-4 bg-cover bg-center bg-no-repeat text-gray-800 font-inter dark:text-white"
+    style="background-image: url('/static/images/');">
+    
+    <!-- Optional: Overlay for readability -->
+    <div class="bg-white/70 dark:bg-gray-900/80 backdrop-blur-md p-8 rounded-xl shadow-md">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                Ask Me Anything! (Chatbot)
+            </h2>
+      
+
+
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-200 max-w-3xl mx-auto flex flex-col h-[500px] overflow-hidden animate-scale-in dark:bg-gray-800 dark:border-gray-700">
+                <!-- Chat history -->
+                <div id="chat-history" class="flex-1 p-6 overflow-y-auto custom-scrollbar">
+  <div id="initial-chat-message" class="flex flex-col items-center justify-center h-full text-gray-400 text-lg space-y-4">
+    <!-- Image Icon -->
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Chatbot Icon"
+         class="w-16 h-16 rounded-full shadow-md opacity-80">
+
+    <!-- Message Text -->
+    <div class="flex items-center justify-center text-center">
+      <span class="mr-2">Start a conversation!</span>
+    </div>
+  </div>
+</div>
+
+                <!-- Chat input -->
+                <div class="p-4 border-t border-gray-200 flex items-center dark:border-gray-700">
+                    <input type="text" id="chat-input" class="flex-1 p-3 rounded-l-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:ring-cyan-500" placeholder="Type your question here...">
+                    <button id="send-chat-btn" class="ml-2 px-5 py-3 rounded-r-lg font-semibold flex items-center justify-center transition duration-300 ease-in-out bg-purple-600 hover:bg-purple-700 transform hover:scale-105 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-500">
+                        <span class="text-white">Send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-950 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                Frequently Asked Questions
+            </h2>
+
+            <div class="max-w-3xl mx-auto space-y-6" id="faq-container">
+                <!-- FAQs populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-900 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                Certificates & Education
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="certificates-container">
+                <!-- Certificates populated by JS -->
+            </div>
+
+            <!-- Education Details -->
+            <div class="mt-20 text-center">
+                <h3 class="text-4xl font-bold mb-10 text-gray-800 animate-on-scroll dark:text-white" style="transition-delay: 0.8s;">
+                    Education
+                </h3>
+                <div class="relative before:absolute before:left-1/2 before:-translate-x-1/2 before:w-1 before:h-full before:bg-gray-300 before:rounded-full before:z-0 dark:before:bg-gray-700" id="education-container">
+                    <!-- Education populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-950 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                My Achievements
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="achievements-container">
+                <!-- Achievements populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-[rgb(16 35 59)] text-gray-800 font-inter dark:bg-gray-900 dark:text-white">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-purple-600 drop-shadow-md animate-on-scroll dark:text-cyan-400">
+                Get In Touch
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 transform hover:scale-[1.02] transition-transform duration-300 animate-from-left dark:bg-gray-800 dark:border-gray-700">
+                    <h3 class="text-3xl font-semibold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+                    <div class="space-y-6 text-lg">
+                        <div class="flex items-center">
+                            <i class="ph-bold ph-envelope-simple mr-4 w-7 h-7 text-purple-600 dark:text-cyan-400"></i>
+                            <div>
+                                <p class="text-gray-500 dark:text-gray-400">Email Address</p>
+                                <a href="mailto:nimjeanurag9@gmail.com" class="text-gray-800 hover:text-purple-600 transition-colors duration-300 dark:text-white dark:hover:text-cyan-400">nimjeanurag9@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ph-bold ph-phone mr-4 w-7 h-7 text-purple-600 dark:text-cyan-400"></i>
+                            <div>
+                                <p class="text-gray-500 dark:text-gray-400">Phone Number</p>
+                                <a href="tel:+919130884608" class="text-gray-800 hover:text-purple-600 transition-colors duration-300 dark:text-white dark:hover:text-cyan-400">+91 9130884608</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ph-bold ph-map-pin mr-4 w-7 h-7 text-purple-600 dark:text-cyan-400"></i>
+                            <div>
+                                <p class="text-gray-500 dark:text-gray-400">Location</p>
+                                <p class="text-gray-800 dark:text-white">Nagpur, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-6 mt-8 justify-center lg:justify-start">
+                        <a href="https://www.linkedin.com/in/anuragnimje5925a228" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-blue-500">
+                            <i class="ph-bold ph-linkedin-logo w-9 h-9"></i>
+                        </a>
+                        <a href="https://github.com/anurag-nimje" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-gray-200">
+                            <i class="ph-bold ph-github-logo w-9 h-9"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 transform hover:scale-[1.02] transition-transform duration-300 animate-from-right dark:bg-gray-800 dark:border-gray-700">
+                    <h3 class="text-3xl font-semibold mb-6 text-gray-800 dark:text-white">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-600 text-lg mb-2 dark:text-gray-300">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-5 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:ring-cyan-500" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-600 text-lg mb-2 dark:text-gray-300">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-5 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:ring-cyan-500" placeholder="Your Email" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-600 text-lg mb-2 dark:text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-5 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:ring-cyan-500" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" id="submit-contact-btn" class="w-full px-8 py-4 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 text-lg flex items-center justify-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-500">
+                            <span id="button-text">Send Message</span>
+                        </button>
+                        <p id="form-status" class="text-center mt-4"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rgb(16 35 59) text-gray-800 py-10 px-4 text-center border-t border-gray-200 font-inter dark:bg-gray-950 dark:text-white dark:border-gray-800">
+        <div class="container mx-auto">
+            <p class="text-gray-500 text-lg dark:text-gray-400">&copy; <span id="current-year"></span> Anurag Tarachand Nimje. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://www.linkedin.com/in/anuragnimje5925a228" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-blue-500">
+                    <i class="ph-bold ph-linkedin-logo w-7 h-7"></i>
+                </a>
+                <a href="https://github.com/anurag-nimje" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-gray-200">
+                    <i class="ph-bold ph-github-logo w-7 h-7"></i>
+                </a>
+                <a href="mailto:nimjeanurag9@gmail.com" class="text-gray-500 hover:text-purple-600 transition-colors duration-300 transform hover:scale-125 dark:text-gray-400 dark:hover:text-cyan-400">
+                    <i class="ph-bold ph-envelope-simple w-7 h-7"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+<script src="/static/js/jay.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,573 @@
+
+
+        /* Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f2f5; /* Default Light background */
+            color: #333; /* Default Light text */
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+        }
+
+        /* Dark mode body styles */
+        html.dark body {
+            background-color: #111827; /* dark-950 */
+            color: #f3f4f6; /* gray-100 */
+        }
+
+        /* Custom Scrollbar for Chatbot */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e0e0e0; /* Light track */
+            border-radius: 10px;
+        }
+        html.dark .custom-scrollbar::-webkit-scrollbar-track {
+            background: #374151; /* Dark track */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #8e2de2; /* Purple thumb */
+            border-radius: 10px;
+        }
+        html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #06b6d4; /* Cyan thumb in dark mode */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #4a00e0; /* Darker purple */
+        }
+        html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #0e7490; /* Darker cyan */
+        }
+
+        /* Grid Pattern for Hero Section - REMOVED, replaced by custom background on #hero */
+        .bg-grid-pattern {
+            display: none;
+        }
+
+        /* Keyframe for subtle pulse effect */
+        @keyframes pulseLight {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.15; }
+        }
+
+        .animate-pulse-light {
+            animation: pulseLight 4s infinite ease-in-out;
+        }
+
+        /* Keyframe for fade-in-up effect */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Keyframe for subtle ping effect */
+        @keyframes ping-slow {
+            0%, 100% {
+                transform: translateX(-50%) translateY(-50%) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(-50%) translateY(-50%) scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        .animate-ping-slow {
+            animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        /* Initial states for animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-from-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-from-left.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-from-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-from-right.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .animate-scale-in.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Specific delays for children elements */
+        .skill-item.in-view {
+            transition-delay: var(--delay); /* Use CSS variable for delay */
+        }
+        .project-item.in-view {
+            transition-delay: var(--delay);
+        }
+        .achievement-item.in-view {
+            transition-delay: var(--delay);
+        }
+        .certificate-item.in-view {
+            transition-delay: var(--delay);
+        }
+        .faq-item.in-view {
+            transition-delay: var(--delay);
+        }
+        .stat-item.in-view {
+            transition-delay: var(--delay);
+        }
+        .experience-item.in-view {
+            transition-delay: var(--delay);
+        }
+        .education-item.in-view {
+            transition-delay: var(--delay);
+        }
+
+        /* Accordion transition for FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Adjust as needed for content */
+            opacity: 1;
+        }
+
+        /* Header and Navigation Styles - Adapted for new hero layout */
+        .header {
+            position: fixed;
+            top: 1rem; /* Adjusted from 0 to provide margin */
+            left: 50%; /* Center the header */
+            transform: translateX(-50%); /* Center the header */
+            width: calc(100% - 2rem); /* Full width minus margin */
+            max-width: 900px; /* Max width as per image */
+            z-index: 50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+           
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            backdrop-filter: blur(8px); /* Glassmorphism effect */
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 9999px; /* rounded-full for pill shape */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        html.dark .header {
+            background-color: rgba(31, 41, 55, 0.5); /* Semi-transparent dark */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .header__logo {
+            display: none; /* Hide logo in the header as it's on the card */
+        }
+
+        .header__navigation {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu__list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 0.5rem; /* Tighter spacing for pill navigation */
+            flex-wrap: wrap;
+        }
+
+        .menu__link {
+            display: flex;
+            flex-direction: row; /* Icon and text side-by-side */
+            align-items: center;
+            padding: 0.5rem 1rem; /* More horizontal padding */
+            color: #d1d5db; /* Light text for dark hero background */
+            font-size: 1rem; /* Slightly smaller text */
+            font-weight: 500;
+            border-radius: 9999px; /* Pill shape for links */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .menu__link:hover,
+        .menu__link.active { /* Added active state */
+            background-color: rgba(139, 92, 246, 0.7); /* Purple background */
+            color: #fff; /* White text */
+            transform: none; /* Remove translateY */
+        }
+        html.dark .menu__link:hover,
+        html.dark .menu__link.active {
+            background-color: rgba(34, 211, 238, 0.7); /* Cyan background */
+            color: #111827; /* Dark text for cyan */
+        }
+
+        .menu__caption {
+            margin-top: 0; /* Remove top margin */
+            margin-right: 0.25rem; /* Space between text and icon */
+        }
+        .menu__link i {
+            font-size: 1.25rem; /* Smaller icons */
+        }
+
+        .header__controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* Tighter gap */
+        }
+
+        /* Color Switcher */
+        .color-switcher {
+            width: 48px; /* Slightly smaller switch */
+            height: 28px;
+            border-radius: 14px;
+            padding: 0;
+            background-color: rgba(55, 65, 81, 0.7); /* Darker for header */
+            border: 1px solid rgba(75, 85, 99, 0.5);
+        }
+        .color-switcher em {
+            width: 24px;
+            height: 24px;
+            top: 1px;
+            left: 1px;
+        }
+        html.dark .color-switcher em {
+            transform: translateX(20px); /* Adjust based on new width */
+        }
+        .color-switcher .ph-sun, .color-switcher .ph-moon {
+            font-size: 0.9rem; /* Smaller icons */
+        }
+
+
+        .header__trigger {
+            padding: 0.5rem 1rem; /* Smaller padding for button in header */
+            box-shadow: none; /* Remove shadow to match image */
+            font-size: 0.9rem;
+        }
+        .header__trigger .trigger__caption {
+            margin-right: 0.25rem; /* Space between text and icon */
+        }
+        .header__trigger i {
+            font-size: 1.1rem; /* Smaller icon */
+        }
+
+        /* Responsive adjustments for header */
+        @media (max-width: 768px) {
+            .header {
+                width: calc(100% - 1rem); /* Smaller margin on mobile */
+                top: 0.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem; /* More rounded rect for mobile */
+            }
+            .header__navigation {
+                width: 100%;
+                justify-content: center;
+                order: 1;
+                margin-top: 0.5rem;
+            }
+            .menu__list {
+                flex-direction: column;
+                gap: 0.25rem;
+                width: 100%;
+            }
+            .header__controls {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 0.5rem;
+            }
+            .header__controls .hidden.md\:block {
+                display: block !important;
+            }
+             .menu__link .menu__caption {
+                display: block;
+            }
+            .menu__link {
+                width: 100%; /* Full width links on mobile */
+                justify-content: center;
+            }
+        }
+        @media (min-width: 769px) {
+            #navbar-toggle {
+                display: none;
+            }
+            #navbar-links {
+                display: flex !important;
+                flex-grow: 1;
+                justify-content: center;
+            }
+        }
+
+        /* Hero Section Background - Mimicking the provided image */
+        #hero {
+            background-color: #0d1a2d; /* Dark base color from the image */
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(26, 104, 151, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 85% 70%, rgba(77, 182, 172, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(13, 26, 45, 0.8) 0%, rgba(20, 39, 65, 0.8) 100%);
+            background-blend-mode: overlay, overlay, normal;
+            position: relative;
+            overflow: hidden;
+        }
+
+        html.dark #hero {
+            background-color: #0d1a2d;
+        }
+
+        /* Adjust the hero-card-left for better blending */
+        #hero .animate-scale-in[data-animate="hero-card-left"] {
+            background-color: rgba(30, 41, 59, 0.8); /* Slightly transparent dark blue/gray */
+            border-color: rgba(60, 70, 80, 0.5); /* Lighter border */
+            backdrop-filter: blur(8px); /* Glassmorphism effect */
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+        }
+
+        html.dark #hero .animate-scale-in[data-animate="hero-card-left"] {
+            background-color: rgba(30, 41, 59, 0.8);
+            border-color: rgba(60, 70, 80, 0.5);
+        }
+
+        /* Text colors inside the card */
+        #hero .animate-scale-in[data-animate="hero-card-left"] h2,
+        #hero .animate-scale-in[data-animate="hero-card-left"] p {
+            color: #f3f4f6; /* Lighter text for dark card background */
+        }
+        #hero .animate-scale-in[data-animate="hero-card-left"] p.text-md.text-gray-600 {
+            color: #d1d5db; /* Slightly darker light text */
+        }
+
+        /* Social icons background in the hero card */
+        #hero .animate-scale-in[data-animate="hero-card-left"] .p-3.rounded-full.bg-gray-100 {
+            background-color: rgba(55, 65, 81, 0.7); /* Darker, slightly transparent */
+        }
+        #hero .animate-scale-in[data-animate="hero-card-left"] .p-3.rounded-full.bg-gray-100:hover {
+            background-color: rgba(75, 85, 99, 0.9);
+        }
+        #hero .animate-scale-in[data-animate="hero-card-left"] .text-gray-600.dark\:text-gray-300 {
+            color: #e0e0e0; /* Ensure icon visibility */
+        }
+
+        /* Adjust the right content for better contrast */
+        #hero .animate-fade-in-up[data-animate="hero-content-right"] h1 {
+            color: #f3f4f6; /* Lighter text */
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(139, 92, 246, 0.5); /* Subtle glow */
+        }
+        #hero .animate-fade-in-up[data-animate="hero-content-right"] p {
+            color: #d1d5db; /* Lighter text */
+        }
+        #hero .animate-fade-in-up[data-animate="hero-content-right"] p.text-purple-600 {
+            color: #22d3ee; /* Cyan for emphasis */
+        }
+
+        /* Avatar ring color (already fine, but double-check) */
+        #hero .animate-scale-in[data-animate="hero-card-left"] .rounded-full.ring-2.ring-purple-400 {
+            ring-color: #22d3ee; /* Match new color scheme */
+        }
+
+        /* New styles for Hero Section specific layout as per the image */
+        #hero-content-wrapper {
+            display: flex;
+            justify-content: flex-start; /* Align content to start (left) */
+            align-items: center; /* Vertically center */
+            width: 100%;
+            height: 100%;
+            max-width: 1200px; /* Adjust as needed */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+            gap: 4rem; /* Space between the left card and right content */
+            padding-top: 8rem; /* Space for fixed header */
+        }
+
+        #hero-card-container {
+            
+            width: 380px; /* Fixed width for the card as per image */
+            margin-left: 2rem; /* Add left margin */
+        }
+
+        #hero-main-content {
+            flex-grow: 1; /* Allow content to grow */
+            text-align: left; /* Align text to left */
+            padding-right: 4rem; /* Some padding on the right */
+        }
+
+        #hero-main-content h1 {
+            font-size: 4rem; /* Larger font size for main heading */
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        #hero-main-content p.text-2xl {
+            font-size: 2.5rem; /* Larger font size for subtitle */
+            margin-bottom: 2rem;
+        }
+
+        #hero-main-content .flex-wrap {
+            justify-content: flex-start; /* Buttons aligned to left */
+        }
+
+        /* Position the scroll indicator more centrally on the right */
+        #hero .absolute.bottom-10.right-10 {
+            right: 5%; /* Adjust as needed */
+            bottom: 5%; /* Adjust as needed */
+            transform: none; /* Remove existing transform */
+        }
+
+        /* Hide specialization and based in in the new card layout */
+        #hero-card-container .text-md.text-gray-600.mb-2,
+        #hero-card-container .text-lg.font-semibold.text-gray-800.mb-4,
+        #hero-card-container .text-lg.font-semibold.text-gray-800.mb-6 {
+            display: none;
+        }
+
+        /* Add styling for the contact info as seen in the image */
+        #hero-card-container .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align text left */
+            gap: 1rem; /* Space between contact lines */
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        #hero-card-container .contact-info-item {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        #hero-card-container .contact-info-item i {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            color: #22d3ee; 
+        }
+
+        #hero-card-container .contact-info-item p {
+            font-size: 1.1rem; 
+            color: #f3f4f6; 
+            margin-bottom: 0; 
+        }
+        #hero-card-container .contact-info-item span {
+            font-size: 1.1rem; 
+            color: #f3f4f6;
+            display: block; 
+        }
+
+        #hero-card-container .flex.space-x-4.mb-6 {
+            margin-top: 0.5rem; 
+            margin-bottom: 1.5rem; 
+            justify-content: center; 
+        }
+
+        /* Remove the AI logo on the card */
+        #hero-card-container .w-24.h-24.rounded-full {
+            display: none;
+        }
+
+        /* Ensure the main avatar is rounded as in the image */
+        #hero-card-container img.rounded-xl {
+            border-radius: 1.5rem; /* More rounded corners, slightly more than 1rem */
+            width: 100%; /* Fill card width */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+        }
+
+        /* Adjust button styles in the hero section for the new design */
+        #hero-card-container button {
+            background-image: linear-gradient(to right, #8b5cf6, #6366f1); /* Purple to Indigo */
+            font-size: 1.1rem;
+        }
+        #hero-main-content button,
+        #hero-main-content a.inline-flex {
+            font-size: 1.1rem;
+            padding: 0.8rem 2rem;
+        }
+
+        @media (max-width: 1024px) { /* Adjust for smaller desktops/large tablets */
+            #hero-content-wrapper {
+                flex-direction: column;
+                padding-top: 10rem;
+                gap: 2rem;
+            }
+            #hero-card-container {
+                width: 80%; /* Wider card on smaller screens */
+                max-width: 380px; /* Keep max-width */
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #hero-main-content {
+                text-align: center;
+                padding-right: 0;
+            }
+            #hero-main-content .flex-wrap {
+                justify-content: center;
+            }
+            #hero-main-content h1 {
+                font-size: 3rem;
+            }
+            #hero-main-content p.text-2xl {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 640px) { /* Adjust for mobile */
+            #hero-content-wrapper {
+                padding-top: 8rem;
+            }
+            #hero-main-content h1 {
+                font-size: 2.5rem;
+            }
+            #hero-main-content p.text-2xl {
+                font-size: 1.5rem;
+            }
+            #hero-card-container {
+                width: 90%;
+            }
+        }
+
